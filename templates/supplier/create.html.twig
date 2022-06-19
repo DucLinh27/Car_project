@@ -1,0 +1,30 @@
+{%extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="supplierID">Supplier:</label>
+        {{ form_widget(form.supplierID,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Task name'
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.supplierID) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="suppliername">Supplier_Name:</label>
+        {{ form_widget(form.suppliername,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Suppliername'
+            }
+        }) }}
+    </div>
+
+
+
+    <input type="submit" name="create_supplier" value="Create" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

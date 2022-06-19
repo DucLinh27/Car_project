@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="Customername">CustomerName:</label>
+        {{ form_widget(form.Customername,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Task name'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="Customeremail">CustomerEmail:</label>
+        {{ form_widget(form.Customeremail,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'CustomerEmail'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="Phonenumber">PhoneNumber:</label>
+        {{ form_widget(form.Phonenumber,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Phonenumber'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="Address">Address:</label>
+        {{ form_widget(form.Address,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Address'
+            }
+        }) }}
+    </div>
+
+
+    <input type="submit" name="edit_car" value="Edit" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

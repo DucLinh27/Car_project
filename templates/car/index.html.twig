@@ -1,20 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/project_web/project_web/src/Controller/CarController.php'|file_link(0) }}">src/Controller/CarController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/project_web/project_web/templates/car/index.html.twig'|file_link(0) }}">templates/car/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for car in cars %}
+                <tr>
+                    <th scope="row">{{ car.id }}</th>
+                    <td>{{ car.Carname }}</td>
+                    <td>{{ car.Carprice }}</td>
+                    <td>
+                        {#<a href="{{ path('todo_details', {'id': todo.id}) }} " class='btn btn-success'>View</a>#}
+                        {#<a href="{{ path('todo_edit', {'id': todo.id}) }}" class='btn btn-default'>Edit</a>#}
+                        {#<a href="{{ path('todo_delete', {'id': todo.id}) }}" class='btn btn-danger'>Delete</a>#}
+                        <a href="{{ path('car_details' , {'id' : car.id}) }}" class='btn btn-success'>View</a>
+                        <a href="{{ path('car_edit' , {'id' : car.id}) }}" class='btn btn-default'>Edit</a>
+                        <a href="{{ path('car_delete' , {'id' : car.id}) }}" class='btn btn-danger'>Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

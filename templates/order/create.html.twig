@@ -1,0 +1,30 @@
+{%extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="OrderID">Order_ID:</label>
+        {{ form_widget(form.OrderID,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Task name'
+            }
+        }) }}
+        <div class="invalid-feedback">
+            {{ form_errors(form.OrderID) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="DateOrder">DateOrder:</label>
+        {{ form_widget(form.DateOrder,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'DateOrder'
+            }
+        }) }}
+    </div>
+
+
+
+    <input type="submit" name="create_customer" value="Create" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}
